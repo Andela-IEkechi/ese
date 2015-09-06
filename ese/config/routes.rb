@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  root 'home#show'
+
   devise_for :users
-  root 'coming_soon#show'
+  get 'coming_soon/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

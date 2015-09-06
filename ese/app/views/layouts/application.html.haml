@@ -5,22 +5,64 @@
     %title Ese
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{ href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel:"stylesheet" }
     = csrf_meta_tags
   %body
-    -#- if notice
-    -#  %p.alert.alert-success= notice
-    -#- if alert
-    -#  %p.alert.alert-danger= alert
-    -#%p.navbar-text.pull-right
-    -#  - if user_signed_in?
-    -#    Logged in as
-    -#    = succeed "." do
-    -#      %strong= current_user.email
-    -#    = link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link'
-    -#    |
-    -#    = link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
-    -#  - else
-    -#    = link_to "Sign up", new_user_registration_path, :class => 'navbar-link'
-    -#    |
-    -#    = link_to "Login", new_user_session_path, :class => 'navbar-link'
+    - if notice
+      %p.alert.alert-success
+        = notice
+    - if alert
+      %p.alert.alert-danger
+        = alert
+
+    %p.navbar-text.pull-right
+      - if user_signed_in?
+        Logged in as
+        %strong= current_user.email
+        = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
+        = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
+      - else
+        = link_to "Sign up", new_user_registration_path, class: 'navbar-link'
+        = link_to "Login", new_user_session_path, class: 'navbar-link'
     = yield
+.col.s12.footer1.valign-wrapper
+  .row
+    .col.s6.m6
+      .card-panel.blue-grey.darken-1
+        %span.white-text I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+      .card.small
+        .card-image
+          = image_tag('blog.jpg', size: '', class: 'activator')
+          %span.card-title Ese's Blog
+        .card-content
+          %p I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.
+        .card-action
+          = link_to 'Read', '#'
+    .col.s6
+      .card
+        .card-image.waves-effect.waves-block.waves-light
+          = image_tag('ese_bg.jpg', size: '500x350', class: 'activator')
+        .card-content
+          %span.card-title.activator.grey-text.text-darken-4 Femina Speaks Tv
+          %i.material-icons.right more_vert
+          %p= link_to 'Watch', '#'
+        .card-reveal
+          %span.card-title.grey-text.text-darken-4 Femina Speaks Tv
+          %i.material-icons.right close
+          %p Here is some more information about this Femina Speaks Tv that is only revealed once clicked on.
+.page-footer.footer2
+  .container
+    .row
+      .col.s12
+        .center-align.wrap-me
+          = link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light btn-large'
+          = link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light btn-large'
+          = link_to ('<i class="material-icons left">assignment</i> Book').html_safe, '#', class: 'waves-effect waves-light btn-large'
+        .center-align
+          = link_to image_tag('facebook.png'), 'https://www.facebook.com/esefemina'
+          = link_to image_tag('googleplus.png'), 'https://twitter.com/kendrickzma'
+          = link_to image_tag('twitter.png'), 'https://plus.google.com/+EseWalter'
+  .footer-copyright
+    .container
+      %h6.center-align Copyright © 2015 Femina Speaks Media, All rights reserved.
+      %p.center-align Use of content without express permission from Ese Walter will be held as a breach of the copyright protection of this website
