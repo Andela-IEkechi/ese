@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @tv.title
+%p
+  %b Description:
+  = @tv.description
+%p
+  %b Published:
+  = @tv.published
+%p
+  %b Youtube url:
+  = @tv.youtube_url
+
+= link_to 'Edit', edit_tv_path(@tv)
+\|
+= link_to 'Back', tvs_path

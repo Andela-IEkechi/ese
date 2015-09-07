@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Walter
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    - if notice
+      %p.alert.alert-success
+        = notice
+    - if alert
+      %p.alert.alert-danger
+        = alert
+    .navbar-fixed
+      %nav
+        .nav-wrapper.nav-text
+          = link_to root_path, class: "brand-logo" do
+            Logo
+          %ul.right.hide-on-med-and-down
+            - if user_signed_in?
+              %li
+                %strong current_user.email
+              %li
+                = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
+              %li
+                = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
+            - else
+              %li.active
+                = link_to "Join", new_user_session_path, class: 'navbar-link'
+    .row
+      = yield
+
+    .col.s12.footer1.valign-wrapper
+      .row
+        .col.s3.valign icon & stuff xcjvjkcxvds dskfjds
+        .col.s3 icon & stuff xcjvjkcxvds
+        .col.s3 icon & stuff xcjvjkcxvds jdhl
+        .col.s3 icon & stuff xcjvjkcxvds
+    .col.s12.footer2 kdsjdks

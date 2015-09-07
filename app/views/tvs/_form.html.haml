@@ -1,0 +1,22 @@
+= form_for @tv do |f|
+  - if @tv.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@tv.errors.count, "error")} prohibited this tv from being saved:"
+      %ul
+        - @tv.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :published
+    = f.text_field :published
+  .field
+    = f.label :youtube_url
+    = f.text_field :youtube_url
+  .actions
+    = f.submit 'Save'
