@@ -2,40 +2,45 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Walter
+    %title Ese Walter
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %link{href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet'}
     = csrf_meta_tags
   %body
-    - if notice
-      %p.alert.alert-success
-        = notice
-    - if alert
-      %p.alert.alert-danger
-        = alert
+    %ul#dropdown1.dropdown-content
+      %li= link_to 'Edit profile', edit_user_registration_path
+      %li.divider
+      %li= link_to "Logout", destroy_user_session_path, method: :delete
     .navbar-fixed
       %nav
-        .nav-wrapper.nav-text
-          = link_to root_path, class: "brand-logo" do
-            Logo
+        .nav-wrapper
+          = link_to 'Femina Speaks Media', root_path, class: "brand-logo"
           %ul.right.hide-on-med-and-down
+            %li= link_to 'Femina Speaks TV', tvs_path
+            %li= link_to 'Read', '#'
+            %li= link_to 'Book', books_path
+            %li= link_to 'About', about_show_path
             - if user_signed_in?
-              %li
-                %strong current_user.email
-              %li
-                = link_to 'Edit profile', edit_user_registration_path, class: 'navbar-link'
-              %li
-                = link_to "Logout", destroy_user_session_path, method: :delete, class: 'navbar-link'
+              %li= link_to current_user.email, '#', class: 'dropdown-button'
+              %i.material-icons.right arrow_drop_down
             - else
-              %li.active
-                = link_to "Join", new_user_session_path, class: 'navbar-link'
+              %li= link_to "Join", new_user_session_path, class: 'navbar-link'
     .row
       = yield
-
-    .col.s12.footer1.valign-wrapper
-      .row
-        .col.s3.valign icon & stuff xcjvjkcxvds dskfjds
-        .col.s3 icon & stuff xcjvjkcxvds
-        .col.s3 icon & stuff xcjvjkcxvds jdhl
-        .col.s3 icon & stuff xcjvjkcxvds
-    .col.s12.footer2 kdsjdks
+    .col.s12.footer1.page-footer.center-align
+      .container
+        .row.pad
+          .col.s4
+            %li= link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light btn-large'
+          .col.s4
+            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, '#', class: 'waves-effect waves-light btn-large'
+          .col.s4
+            %li= link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light btn-large'
+      .footer-copyright
+        .container.pad
+          = link_to image_tag("facebook.png", size: '100x100'), 'https://www.facebook.com/esefemina'
+          = link_to image_tag("google_buzz.png", size: '100x100'), 'https://plus.google.com/+EseWalter/posts'
+          = link_to image_tag("twitter.png", size: '100x100'), 'https://twitter.com/kendrickzma'
+          .pad
+            %h6.white-text Copyright © 2015 Femina Speaks Media, All rights reserved.

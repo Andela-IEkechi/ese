@@ -1,27 +1,28 @@
-%h1 Listing tvs
+.container
+  %h1 Femina Speaks TV
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Description
-      %th Published
-      %th Youtube url
-      %th
-      %th
-      %th
-
-  %tbody
-    - @tvs.each do |tv|
+  %table
+    %thead
       %tr
-        %td= tv.title
-        %td= tv.description
-        %td= tv.published
-        %td= tv.youtube_url
-        %td= link_to 'Show', tv
-        %td= link_to 'Edit', edit_tv_path(tv)
-        %td= link_to 'Destroy', tv, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Title
+        %th Description
+        %th Published
+        %th Youtube url
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @tvs.each do |tv|
+        %tr
+          %td= tv.title
+          %td= tv.description
+          %td= tv.published
+          %td= tv.youtube_url
+          %td= link_to 'Show', tv
+          %td= link_to 'Edit', edit_tv_path(tv)
+          %td= link_to 'Destroy', tv, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Tv', new_tv_path
+  %br
+
+  = link_to 'New Tv', new_tv_path

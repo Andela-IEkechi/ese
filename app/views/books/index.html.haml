@@ -1,31 +1,32 @@
-%h1 Listing books
+.container
+  %h1 All Books
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Description
-      %th Image
-      %th Release date
-      %th Author
-      %th Cost
-      %th
-      %th
-      %th
-
-  %tbody
-    - @books.each do |book|
+  %table
+    %thead
       %tr
-        %td= book.name
-        %td= book.description
-        %td= book.image
-        %td= book.release_date
-        %td= book.author
-        %td= book.cost
-        %td= link_to 'Show', book
-        %td= link_to 'Edit', edit_book_path(book)
-        %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th Name
+        %th Description
+        %th Image
+        %th Release date
+        %th Author
+        %th Cost
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+      - @books.each do |book|
+        %tr
+          %td= book.name
+          %td= book.description
+          %td= book.image
+          %td= book.release_date
+          %td= book.author
+          %td= book.cost
+          %td= link_to 'Show', book
+          %td= link_to 'Edit', edit_book_path(book)
+          %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Book', new_book_path
+  %br
+
+  = link_to 'New Book', new_book_path
