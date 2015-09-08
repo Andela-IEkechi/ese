@@ -1,7 +1,8 @@
-%h1 Editing tv
+.container
+  %h1 Edit Video
 
-= render 'form'
+  = render 'form'
+  %br/
+  = link_to ('<i class="material-icons right">video_library</i> View Video').html_safe, @tv, class: 'waves-effect waves-light blue-grey darken-1 btn'
 
-= link_to 'Show', @tv
-\|
-= link_to 'Back', tvs_path
+  = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, tvs_path, class: 'waves-effect waves-light blue-grey darken-1 btn'
