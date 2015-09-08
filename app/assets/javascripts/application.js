@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize-sprockets
-//= require turbolinks
+//= require ckeditor/init
 //= require_tree .
 $( document ).ready(function() {
 	$('.datepicker').pickadate({

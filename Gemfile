@@ -37,6 +37,7 @@ gem 'ratyrate'
 # gem 'bcrypt', '~> 3.1.7'
 # Use cancan for authorization
 gem 'cancancan', '~> 1.10.1'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 # Use Unicorn as the app server
 # gem 'unicorn'
 # Use carrierwave for image uploads

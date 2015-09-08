@@ -1,0 +1,15 @@
+.container
+  %h1 Ese's Blog
+
+  - @articles.each do |article|
+    %tr
+      %td= article.title
+      %td= article.content
+      %td= article.user
+      %td= link_to 'Show', article
+      %td= link_to 'Edit', edit_article_path(article)
+      %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+  = link_to ('<i class="material-icons">add</i> Create New Article').html_safe, new_article_path, 'data-tooltip' => 'Create New Article',
+  class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
