@@ -15,3 +15,9 @@
 //= require materialize-sprockets
 //= require turbolinks
 //= require_tree .
+$( document ).ready(function() {
+	$('.datepicker').pickadate({
+		selectMonths: true,
+		selectYears: 15
+	});
+});

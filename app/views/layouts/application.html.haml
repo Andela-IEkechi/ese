@@ -13,7 +13,7 @@
       %li.divider
       %li= link_to "Logout", destroy_user_session_path, method: :delete
     .navbar-fixed
-      %nav
+      %nav.blue-grey.darken-1
         .nav-wrapper
           = link_to 'Femina Speaks Media', root_path, class: "brand-logo"
           %ul.right.hide-on-med-and-down
@@ -32,11 +32,11 @@
       .container
         .row.pad
           .col.s4
-            %li= link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light btn-large'
+            %li= link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light blue-grey darken-1 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, books_path, class: 'waves-effect waves-light btn-large'
+            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, books_path, class: 'waves-effect waves-light blue-grey darken-1 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light btn-large'
+            %li= link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light blue-grey darken-1 btn-large'
       .footer-copyright
         .container.pad
           = link_to image_tag("facebook.png", size: '100x100'), 'https://www.facebook.com/esefemina'
