@@ -4,7 +4,7 @@ Ckeditor.setup do |config|
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  # require "ckeditor/orm/mongoid"
+  # require "ckeditor/orm/activerecord"
   config.assets_languages = ['en', 'fr']
   config.assets_plugins = ['image', 'smiley']
 

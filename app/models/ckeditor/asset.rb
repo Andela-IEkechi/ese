@@ -1,5 +1,7 @@
-class Ckeditor::Asset
-  include Ckeditor::Orm::Mongoid::AssetBase
+class Ckeditor::Asset < ActiveRecord::Base
+  include ActiveRecord
+  # include Ckeditor::Orm::ActiveRecord::AssetBase
+  # include Ckeditor::Backend::CarrierWave
 
   delegate :url, :current_path, :size, :content_type, :filename, :to => :data
 

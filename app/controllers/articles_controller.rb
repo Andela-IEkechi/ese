@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @monday_mummies = Article.monday_mummies.order(created_at: :desc)
+    @abuse_no_more = Article.abuse_no_more.order(created_at: :desc)
+    @child_abuse = Article.child_abuse.order(created_at: :desc)
+    @random = Article.random.order(created_at: :desc)
   end
 
   def show
@@ -57,6 +61,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :content, :user_id)
+      params.require(:article).permit(:title, :content, :user_id, :section)
     end
 end

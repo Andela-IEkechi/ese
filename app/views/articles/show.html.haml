@@ -1,15 +1,26 @@
-%p#notice= notice
 
-%p
-  %b Title:
-  = @article.title
-%p
-  %b Content:
-  = @article.content
-%p
-  %b User:
-  = @article.user
+.parallax-container
+  %p#notice= notice
+  .parallax
+    = image_tag('nice1.jpg')
+.section.grey.lighten-4
+  .row.container
+    %h2.header= @article.title
+    %blockquote
+      = image_tag("#{@article.user.image}", class: 'circle responsive-img', size: '60x60')
+      %p= @article.user.name
+    %p.grey-text.text-darken-3.lighten-3
+      = raw(@article.content)
+    - if can? :manage, :all
+      .row.container
+        = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, articles_path, class: 'waves-effect waves-light blue-grey darken-1 btn'
 
-= link_to 'Edit', edit_article_path(@article)
-|
-= link_to 'Back', articles_path
+        = link_to ('<i class="material-icons">edit</i> Edit Article').html_safe, edit_article_path(@article), 'data-tooltip' => 'Edit Article',
+            class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
+
+        = link_to ('<i class="material-icons">delete</i> Delete Article').html_safe, @article, :method => :delete, :data => { :confirm => 'Are you sure?' } , 'data-tooltip' => 'Delete Article',
+            class: 'btn-floating btn-large tooltipped waves-effect waves-light red darken-1', 'data-delay' => '50', 'data-position' => 'top'
+.parallax-container
+  .parallax
+    = image_tag('nice2.jpg')
+.black-patch

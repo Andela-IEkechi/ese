@@ -12,6 +12,10 @@
   .input-field
     = f.cktext_area :content, class: 'ckeditor'
   %br/
+  .input-field
+    = f.label :section
+    = f.select :section, options_for_select(Article::SECTIONS), { include_blank: true} , { class: "validate" }
+  %br/
   .actions
     = button_tag type: "submit", class: "waves-effect waves-light btn" do
       %i.material-icons.right done_all

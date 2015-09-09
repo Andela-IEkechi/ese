@@ -1,0 +1,16 @@
+- @monday_mummies.each do |article|
+  .col.s12
+    = link_to article do
+      .card-panel.grey.lighten-5.z-depth-1.hoverable
+        .row.valign-wrapper
+          .col.s2
+            = image_tag("#{article.user.image}", class: 'circle responsive-img', size: '60x60')
+            %p.truncate= article.user.name
+          .col.s10
+            %span.black-text
+              %blockquote
+                = article.title
+              .truncate
+                = raw(article.content)
+
+  %br

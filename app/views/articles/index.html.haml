@@ -1,15 +1,25 @@
 .container
   %h1 Ese's Blog
+  .row
+    .col.s12
+      %ul.tabs
+        %li.tab.col.s3.active
+          = link_to(('<i class="mdi-social-person"></i> Monday Mummies').html_safe, "#mms")
+        %li.tab.col.s3
+          = link_to(('<i class="mdi-social-person"></i> Abuse No More').html_safe, "#anm")
+        %li.tab.col.s3
+          = link_to(('<i class="mdi-social-person"></i> Child Abuse').html_safe, "#cas")
+        %li.tab.col.s3
+          = link_to(('<i class="mdi-social-person"></i> Others').html_safe, "#rand")
 
-  - @articles.each do |article|
-    %tr
-      %td= article.title
-      %td= article.content
-      %td= article.user
-      %td= link_to 'Show', article
-      %td= link_to 'Edit', edit_article_path(article)
-      %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
+    #mms.col.s12
+      = render 'monday_mummies'
+    #anm.col.s12
+      = render 'abuse_no_more'
+    #cas.col.s12
+      = render 'child_abuse'
+    #rand
+      = render 'random'
   %br
   - if can? :manage, :all
     = link_to ('<i class="material-icons">add</i> Create New Article').html_safe, new_article_path, 'data-tooltip' => 'Create New Article',

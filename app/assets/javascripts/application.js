@@ -20,4 +20,5 @@ $( document ).ready(function() {
 		selectMonths: true,
 		selectYears: 15
 	});
+	$('ul.tabs').tabs();
 });
