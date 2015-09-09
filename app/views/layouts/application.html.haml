@@ -22,7 +22,11 @@
             %li= link_to 'Book', books_path
             %li= link_to 'About', about_show_path
             - if user_signed_in?
-              %li= link_to current_user.email, '#', class: 'dropdown-button'
+              - if current_user.image.present?
+                %li= image_tag(current_user.image, class: 'circle responsive-img', size: '58x40')
+              - else
+                %li= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
+              %li= link_to current_user.name, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
               %i.material-icons.right arrow_drop_down
             - else
               %li= link_to "Join", new_user_session_path, class: 'navbar-link'

@@ -1,0 +1,11 @@
+.row
+  = link_to "Log In With Facebook", '#',
+    class: 'col s12 btn-large blue darken-4'
+  %br/
+  %br/
+  %br/
+  .or
+    %span Or
+  %br/
+
+  =#user_omniauth_authorize_path(:facebook)

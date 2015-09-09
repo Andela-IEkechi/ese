@@ -1,0 +1,22 @@
+.container.center-align
+  %h2 Log In
+  = render "devise/shared/facebook"
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .row
+      .input-field.col.s12
+        = f.label :email
+        = f.email_field :email, autofocus: true
+    .row
+      .input-field.col.s12
+        = f.label :password
+        = f.password_field :password, autocomplete: "off"
+    - if devise_mapping.rememberable?
+      .row
+        .input-field.col.s12
+          = f.check_box :remember_me
+          = f.label :remember_me
+    .actions.col.s12
+      = button_tag type: "submit", class: "waves-effect waves-light btn-large" do
+        %i.material-icons.left supervisor_account
+        Enter
+  = render "devise/shared/links"

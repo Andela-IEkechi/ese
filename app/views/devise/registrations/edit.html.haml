@@ -1,0 +1,52 @@
+.container.center-align
+  %h2
+    Edit #{resource_name.to_s.humanize}
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    .form-head.row
+      - if @user.image.present?
+        .col.s9= image_tag @user.image.url(:small), class: 'circle responsive-img'
+      - else
+        .col.s9= image_tag('default_avatar.png', width: "200", class: "circle responsive-img")
+      .col.s3.file-field.input-field
+        .btn
+          %span
+            %i.mdi-image-camera-alt
+        = f.file_field :image, class: 'tooltipped', 'data-tooltip' => 'Add Your Image', 'data-delay' => '50', 'data-position' => 'top'
+    .row
+      .input-field.col.s12
+        %i.mdi-social-person.prefix
+        = f.text_field :name, autofocus: true, class: "validate"
+        = f.label :name
+    .row
+      .input-field.col.s12
+        %i.mdi-social-person.prefix
+        = f.label :email
+        = f.email_field :email
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .row
+      .input-field.col.s12
+        = f.label :password
+        %i (leave blank if you don't want to change it)
+        %br/
+        = f.password_field :password, autocomplete: "off"
+    .row
+      .input-field.col.s12
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: "off"
+    .row
+      .input-field.col.s12
+        = f.label :current_password
+        %i (we need your current password to confirm your changes)
+        %br/
+        = f.password_field :current_password, autocomplete: "off"
+    .actions
+      = button_tag type: "submit", class: "waves-effect waves-light btn-large" do
+        %i.material-icons.left supervisor_account
+        Update
+  %p Unhappy?
+  = link_to ('<i class="material-icons left">delete</i> Cancel my account').html_safe, registration_path(resource_name),
+    class: "waves-effect waves-light btn red", data: { confirm: "Are you sure?" }, method: :delete
+  = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, :back, class: 'waves-effect waves-light blue-grey darken-1 btn'

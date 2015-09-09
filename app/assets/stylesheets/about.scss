@@ -1,3 +1,27 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// .or is approved
+.or {
+  text-align: center;
+  position: relative;
+
+  span {
+    display: inline-block;
+  }
+  span:before,
+  span:after {
+    border-top: 1px solid black;
+    display: block;
+    height: 1px;
+    content: " ";
+    width: 40%;
+    position: absolute;
+    left: 0;
+    top: 1.2em;
+  }
+  span:after {
+    right: 0;
+    left: auto;
+  }
+}

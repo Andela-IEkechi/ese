@@ -1,28 +1,21 @@
 class TvsController < ApplicationController
   before_action :set_tv, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
-  # GET /tvs
-  # GET /tvs.json
   def index
     @tvs = Tv.all
   end
 
-  # GET /tvs/1
-  # GET /tvs/1.json
   def show
   end
 
-  # GET /tvs/new
   def new
     @tv = Tv.new
   end
 
-  # GET /tvs/1/edit
   def edit
   end
 
-  # POST /tvs
-  # POST /tvs.json
   def create
     @tv = Tv.new(tv_params)
 
@@ -37,8 +30,6 @@ class TvsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /tvs/1
-  # PATCH/PUT /tvs/1.json
   def update
     respond_to do |format|
       if @tv.update(tv_params)
@@ -51,8 +42,6 @@ class TvsController < ApplicationController
     end
   end
 
-  # DELETE /tvs/1
-  # DELETE /tvs/1.json
   def destroy
     @tv.destroy
     respond_to do |format|
@@ -62,12 +51,10 @@ class TvsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_tv
       @tv = Tv.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def tv_params
       params.require(:tv).permit(:title, :description, :published, :youtube_url)
     end
