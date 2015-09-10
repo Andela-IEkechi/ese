@@ -1,0 +1,11 @@
+.container
+  = form_for Comment.new do |f|
+    .input-field
+      = f.label :content
+      = f.text_area :content, class: "materialize-textarea", id: 'textarea1'
+    %br/
+    .actions
+      = button_tag type: "submit", class: "waves-effect waves-light btn" do
+        %i.material-icons.left message
+        Post Comment
+  %br/

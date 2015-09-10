@@ -1,0 +1,28 @@
+.row
+  %h2.center-align Reviews for Naked
+
+  - @reviews.each do |review|
+    .col.s12
+      .card-panel.blue-grey.lighten-5.z-depth-0.hoverable
+        .row
+          .col.s2
+            %blockquote
+              = image_tag("#{review.user.image}", class: 'circle responsive-img', size: '60x60')
+              %p.truncate= review.user.name
+          .col.s10
+            %span.black-text
+              = raw(review.content)
+            %p
+            - (1..review.rating).each do
+              %i.material-icons grade
+
+
+%br/
+.row
+  %ul.collapsible{ 'data-collapsible' => 'accordion' }
+    %li
+      .collapsible-header.grey.lighten-4
+        %i.material-icons perm_phone_msg
+        Add Review
+      .collapsible-body
+        = render 'review_form'

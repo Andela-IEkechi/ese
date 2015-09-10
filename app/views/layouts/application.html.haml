@@ -16,7 +16,7 @@
       %nav.blue-grey.darken-1
         .nav-wrapper
           = link_to 'Femina Speaks Media', root_path, class: "brand-logo"
-          %ul.right.hide-on-med-and-down
+          %ul#nav-mobile.right.hide-on-med-and-down
             %li= link_to 'Femina Speaks TV', tvs_path
             %li= link_to 'Read', articles_path
             %li= link_to 'Book', books_path
@@ -29,8 +29,8 @@
               %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
             - else
               %li= link_to "Join", new_user_session_path, class: 'navbar-link'
-    .row
-      = yield
+    -#.row
+    = yield
     .col.s12.footer1.page-footer.center-align
       .container
         .row.pad

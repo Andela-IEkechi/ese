@@ -20,7 +20,42 @@
 
         = link_to ('<i class="material-icons">delete</i> Delete Article').html_safe, @article, :method => :delete, :data => { :confirm => 'Are you sure?' } , 'data-tooltip' => 'Delete Article',
             class: 'btn-floating btn-large tooltipped waves-effect waves-light red darken-1', 'data-delay' => '50', 'data-position' => 'top'
+
+  .row
+    %h2.center-align Comments
+
+    - @comments.each do |comment|
+      .container
+        .col.s12
+          .card-panel.blue-grey.lighten-4.z-depth-1
+            .row
+              .col.s2
+                = image_tag("#{comment.user.image}", class: 'circle responsive-img', size: '60x60')
+                %p.truncate= comment.user.name
+              .col.s10
+                %span.black-text
+                  = raw(comment.content)
+
+  .row
+    .container
+      %ul.collapsible{ 'data-collapsible' => 'accordion' }
+        %li
+          .collapsible-header.grey.lighten-4
+            %i.material-icons comment
+            Add Comment
+          .collapsible-body
+            .container
+              = form_for Comment.new do |f|
+                = hidden_field(:comment, :article_id, value: @article.id)
+                .input-field
+                  = f.label :content
+                  = f.text_area :content, class: "materialize-textarea", id: 'textarea1'
+                %br/
+                .actions
+                  = button_tag type: "submit", class: "waves-effect waves-light btn" do
+                    %i.material-icons.left message
+                    Post Comment
+            %br/
 .parallax-container
   .parallax
     = image_tag('nice2.jpg')
-.black-patch

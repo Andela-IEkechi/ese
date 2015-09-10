@@ -1,0 +1,14 @@
+.container
+  = form_for Review.new do |f|
+    .input-field
+      = f.label :content
+      = f.text_area :content, class: "materialize-textarea", id: 'textarea1'
+    .input-field
+      = f.label :rating
+      = f.select :rating, options_for_select(Book::RATINGS)
+    %br/
+    .actions
+      = button_tag type: "submit", class: "waves-effect waves-light btn" do
+        %i.material-icons.right done_all
+        Create Review
+  %br/
