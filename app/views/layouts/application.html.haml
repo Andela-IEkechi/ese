@@ -30,6 +30,7 @@
               %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
             - else
               %li= link_to "Join", new_user_session_path, class: 'navbar-link'
+    = render 'layouts/disclaimer'
     = yield
     .col.s12.footer1.page-footer.center-align
       .container
