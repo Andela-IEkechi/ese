@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  resources :reviews
-
-  resources :comments
-
-  resources :articles
-
-  devise_for :users
   root 'home#show'
 
   resources :books
   resources :tvs
+  resources :reviews
+  resources :comments
+  resources :articles
+  devise_for :users
+
 
   get 'about/show'
+  get 'about/terms'
   mount Ckeditor::Engine => '/ckeditor'
 
   # The priority is based upon order of creation: first created -> highest priority.

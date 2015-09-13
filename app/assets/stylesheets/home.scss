@@ -7,7 +7,13 @@
 }
 
 .footer2 {
-  height: 600px;
+  height: 350px;
+}
+
+.lower-footer {
+  background-color: #2E3842;
+  padding-top: 3em;
+  padding-bottom: 3em;
 }
 
 .pad {
@@ -20,4 +26,7 @@
   background-color: rgba(0, 0, 0, 0.225);
   height: 300px;
   width: 1200px;
+}
+body {
+  background-color: #f5f5f5 ;
 }
