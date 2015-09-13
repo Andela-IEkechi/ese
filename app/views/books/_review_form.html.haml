@@ -5,6 +5,8 @@
       = f.text_area :content, class: "materialize-textarea", id: 'textarea1'
     .input-field
       = f.label :rating
+      %br/
+      %br/
       = f.select :rating, options_for_select(Book::RATINGS)
     %br/
     .actions

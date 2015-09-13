@@ -14,6 +14,8 @@
   %br/
   .input-field
     = f.label :section
+    %br/
+    %br/
     = f.select :section, options_for_select(Article::SECTIONS), { include_blank: true} , { class: "validate" }
   %br/
   .actions
