@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Sub status:
+  = @subscription.sub_status
+%p
+  %b Sub category:
+  = @subscription.sub_category
+%p
+  %b User:
+  = @subscription.user
+%p
+  %b Sub fee:
+  = @subscription.sub_fee
+
+= link_to 'Edit', edit_subscription_path(@subscription)
+\|
+= link_to 'Back', subscriptions_path

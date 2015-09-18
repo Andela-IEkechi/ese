@@ -37,3 +37,13 @@ body {
   padding-top: 1em;
   background-image: -webkit-gradient(linear, 80% 20%, 10% 21%, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))),  url("background.jpg");
 }
+.a-circle {
+  width:75px;
+  height:75px;
+  border-radius:50%;
+  font-size:15px;
+  color:#fff;
+  line-height:35px;
+  text-align:center;
+  background:#000
+}

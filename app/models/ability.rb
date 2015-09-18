@@ -9,6 +9,8 @@ class Ability
     elsif user.present? && !user.admin?
       can :read, :all
       can :create, Comment
+      can :create, Review
+      can :manage, Subscription
     else
       can :read, :all
     end
