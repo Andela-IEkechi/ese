@@ -1,7 +1,9 @@
-%h1 Editing article
+.container
+  %h1 Editing article
 
-= render 'form'
+  = render 'form'
+  %br/
+  .row
+    = link_to ('<i class="material-icons right">video_library</i> View Article').html_safe, @article, class: 'waves-effect waves-light blue-grey darken-1 btn'
 
-= link_to 'Show', @article
-|
-= link_to 'Back', articles_path
+    = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, articles_path, class: 'waves-effect waves-light blue-grey darken-1 btn'

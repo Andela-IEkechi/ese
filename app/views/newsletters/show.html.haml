@@ -1,0 +1,16 @@
+%p#notice= notice
+
+.section.grey.lighten-4
+  .row.container
+    %h2.header= @newsletter.title
+    %p.grey-text.text-darken-3.lighten-3
+      = raw(@newsletter.content)
+    - if can? :manage, :all
+      .row.container
+        = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, newsletters_path, class: 'waves-effect waves-light blue-grey darken-1 btn'
+
+        = link_to ('<i class="material-icons">edit</i> Edit Newsletter').html_safe, edit_newsletter_path(@newsletter), 'data-tooltip' => 'Edit Newsletter',
+            class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
+
+        = link_to ('<i class="material-icons">delete</i> Delete Newsletter').html_safe, @newsletter, :method => :delete, :data => { :confirm => 'Are you sure?' } , 'data-tooltip' => 'Delete Newsletter',
+            class: 'btn-floating btn-large tooltipped waves-effect waves-light red darken-1', 'data-delay' => '50', 'data-position' => 'top'

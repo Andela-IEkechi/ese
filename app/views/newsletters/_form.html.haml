@@ -1,0 +1,17 @@
+= form_for @newsletter do |f|
+  - if @newsletter.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@newsletter.errors.count, "error")} prohibited this newsletter from being saved:"
+      %ul
+        - @newsletter.errors.full_messages.each do |msg|
+          %li= msg
+
+  .input-field
+    = f.label :title
+    = f.text_field :title
+  .input-field
+    = f.cktext_area :content, class: 'ckeditor'
+  .actions
+    = button_tag type: "submit", class: "waves-effect waves-light btn" do
+      %i.material-icons.right done_all
+      Create Newsletter

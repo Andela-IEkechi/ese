@@ -28,4 +28,5 @@ $( document ).ready(function() {
 		$('#disclaimer').openModal();
 		localStorage.setItem('popState','shown')
 	}
+	$('.dropdown-button').dropdown();
 });

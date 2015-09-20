@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :newsletters
+
   root 'home#show'
 
   resources :books
