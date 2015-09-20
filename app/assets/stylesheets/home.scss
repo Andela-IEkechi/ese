@@ -2,8 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .footer1 {
-  background-color: black;
+  background-color: #1976d2;
   height: 400px;
+  li {
+    list-style: none;
+  }
 }
 
 .footer2 {
@@ -11,7 +14,7 @@
 }
 
 .lower-footer {
-  background-color: #2E3842;
+  background-color: #bbdefb;
   padding-top: 3em;
   padding-bottom: 3em;
 }
