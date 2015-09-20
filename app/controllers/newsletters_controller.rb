@@ -23,6 +23,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
+        NewsletterMailer.newsletter_created(@newsletter).deliver_now
         format.html { redirect_to @newsletter, notice: 'Newsletter was successfully created.' }
         format.json { render :show, status: :created, location: @newsletter }
       else
