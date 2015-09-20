@@ -1,18 +1,19 @@
-.container
-  .row
-    .col.s12
-      %ul.tabs
-        %li.tab.col.s3.active
-          = link_to(('<i class="mdi-social-person"></i> Naked').html_safe, "#naked")
-        %li.tab.col.s3
-          = link_to(('<i class="mdi-social-person"></i> Reviews').html_safe, "#reviews")
-        %li.tab.col.s3
-          = link_to(('<i class="mdi-social-person"></i> Book Club').html_safe, "#club")
+.books
+  .container
+    .row
+      .col.s12
+        %ul.tabs
+          %li.tab.col.s3.active
+            = link_to(('<i class="mdi-social-person"></i> Naked').html_safe, "#naked")
+          %li.tab.col.s3
+            = link_to(('<i class="mdi-social-person"></i> Reviews').html_safe, "#reviews")
+          %li.tab.col.s3
+            = link_to(('<i class="mdi-social-person"></i> Book Club').html_safe, "#club")
 
-    #naked.col.s12
-      = render 'naked'
-    #reviews.col.s12
-      = render 'review'
-    #club.col.s12
-      = render 'book_club'
-  %br
+      #naked.col.s12
+        = render 'naked'
+      #reviews.col.s12
+        = render 'review'
+      #club.col.s12
+        = render 'book_club'
+    %br

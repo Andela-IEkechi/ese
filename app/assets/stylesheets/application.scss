@@ -33,9 +33,19 @@ body {
 //  left: 0;
 }
 .back {
-  margin-top: -2.5em;
+  margin-top: -1.5em;
   padding-top: 1em;
-  background-image: -webkit-gradient(linear, 80% 20%, 10% 21%, from(rgba(255, 255, 255, 0.6)), to(rgba(255, 255, 255, 0.6))),  url("background.jpg");
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, 80% 20%, 10% 21%, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3))),  url("background.jpg");
+}
+.books {
+  padding-top: 1em;
+  background-image: -webkit-gradient(linear, 80% 20%, 10% 21%, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0.3))),  url("bookshelf.jpg");
+  background-repeat: no-repeat;
+  overflow-y: scroll;
+  height: 120vh;
 }
 .a-circle {
   width:75px;
