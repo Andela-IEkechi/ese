@@ -17,9 +17,9 @@
       %li= link_to "Logout", destroy_user_session_path, method: :delete
     .navbar-fixed
       %nav.blue.lighten-4
-        .nav-wrapper
-          .container
-            = link_to 'Femina Speaks', root_path, class: "brand-logo"
+        .nav-wrapper.wrap-nav
+          = image_tag('femina-speaks.png', size: '63x63', class: 'responsive-img')
+          = link_to 'Femina Speaks', root_path, class: "brand-logo"
           %ul#nav-mobile.right.hide-on-med-and-down
             %li= link_to 'Femina Speaks TV', tvs_path
             %li= link_to 'Read', articles_path
@@ -34,6 +34,7 @@
               %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
             - else
               %li= link_to "Join", new_user_session_path, class: 'navbar-link'
+    = render 'layouts/google_tag_manager'
     = render 'layouts/disclaimer'
     = yield
     .col.s12.footer1.blue-grey.darken-3.page-footer.center-align
