@@ -1,3 +1,21 @@
 %hmtl
+  %head
+    %link{ href:"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css", rel:"stylesheet"}
+    %link{ href:"https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js" }
+    %link{href:'http://fonts.googleapis.com/css?family=Lato', rel:'stylesheet', type:'text/css'}
   %body
-    = yield
+    .indigo.lighten-5.container{style:"font-family: 'Lato', sans-serif; font-style: italic"}
+      .row.center-align
+        = image_tag(attachments['femina-speaks.png'].url, class: "responsive-img", alt: 'Femina Speaks Logo')
+      .container.center-align
+        = yield
+      .footer1.blue-grey.darken-3.page-footer.center-align
+        .footer-copyright
+          %br/
+          = link_to image_tag(attachments["facebook.png"].url, size: '100x100', class: "responsive-img"), 'https://www.facebook.com/esefemina', target: '_blank'
+          = link_to image_tag(attachments["google_buzz.png"].url, size: '100x100', class: "responsive-img"), 'https://plus.google.com/+EseWalter/posts', target: '_blank'
+          = link_to image_tag(attachments["twitter.png"].url, size: '100x100', class: "responsive-img"), 'https://twitter.com/kendrickzma', target: '_blank'
+          %br/
+          %h6.white-text Copyright © 2015 Femina Speaks Media, All rights reserved.
+          %br/
+
