@@ -3,9 +3,9 @@ class NewsletterMailer < ApplicationMailer
     @newsletter = newsletter
     @articles = Article.this_week
     @users = User.all
-    @date = Date.today
+    @date = Date.today.strftime("%b %d, %Y")
     @url  = "https://esewalter.com/articles/"
-    attachments.inline['femina-speaks.png'] = File.read(File.join(Rails.root, 'app','assets', 'images', 'femina-speaks.png'))
+    attachments.inline['femina.png'] = File.read(File.join(Rails.root, 'app','assets', 'images', 'femina-speaks.png'))
     attachments.inline['facebook.png'] = File.read(File.join(Rails.root, 'app','assets', 'images', 'facebook.png'))
     attachments.inline['google_buzz.png'] = File.read(File.join(Rails.root, 'app','assets', 'images', 'google_buzz.png'))
     attachments.inline['twitter.png'] = File.read(File.join(Rails.root, 'app','assets', 'images', 'twitter.png'))
