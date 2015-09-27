@@ -14,8 +14,8 @@
               = link_to 'WATCH', tv
               - if can? :manage, :all
                 = link_to ('<i class="material-icons">delete</i>  Delete Video').html_safe, tv, :method => :delete, :data => { :confirm => 'Are you sure?' }, 'data-tooltip' => 'Delete Video',
-                class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
+                class: 'btn-floating btn-large tooltipped waves-effect waves-light pink darken-3', 'data-delay' => '50', 'data-position' => 'top'
     %br
     - if can? :manage, :all
       = link_to ('<i class="material-icons">add</i> Add New Video').html_safe, new_tv_path, 'data-tooltip' => 'Add New Video',
-      class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
+      class: 'btn-floating btn-large tooltipped waves-effect waves-light pink darken-3', 'data-delay' => '50', 'data-position' => 'top'

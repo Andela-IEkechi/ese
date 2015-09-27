@@ -18,7 +18,7 @@
     .navbar-fixed
       %nav.blue.lighten-4
         .nav-wrapper.wrap-nav
-          = image_tag('femina-speaks.png', size: '63x63', class: 'responsive-img')
+          -#= image_tag('femina-speaks.png', size: '63x63', class: 'responsive-img')
           = link_to 'Femina Speaks', root_path, class: "brand-logo"
           %ul#nav-mobile.right.hide-on-med-and-down
             %li= link_to 'Femina Speaks TV', tvs_path
@@ -37,21 +37,22 @@
     = render 'layouts/google_tag_manager'
     = render 'layouts/disclaimer'
     = yield
-    .col.s12.footer1.blue-grey.darken-3.page-footer.center-align
+    .col.s12.footer1.pink.darken-3.page-footer.center-align
       .container
         .row.pad
           .col.s4
-            %li= link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light blue-grey darken-1 btn-large'
+            %li= link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, books_path, class: 'waves-effect waves-light blue-grey darken-1 btn-large'
+            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, books_path, class: 'waves-effect waves-light pink darken-4 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light blue-grey darken-1 btn-large'
+            %li= link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
       .footer-copyright
         .container
           = link_to image_tag("facebook.png", size: '100x100'), 'https://www.facebook.com/esefemina'
           = link_to image_tag("google_buzz.png", size: '100x100'), 'https://plus.google.com/+EseWalter/posts'
           = link_to image_tag("twitter.png", size: '100x100'), 'https://twitter.com/kendrickzma'
         .lower-footer
-          %h6.blue-grey-text.text-darken-3 Copyright © 2015 Femina Speaks Media, All rights reserved.
-          %p.blue-grey-text.text-darken-3 No part of this website may be reproduced or transmitted in any form, by any means.  It is illegal to use without express permission. A violation of this will attract a N1,000,000 (one millions naira) fine and possible law suit.
-          = link_to 'Please read the full Copyright terms under Terms of Use.', about_terms_path
+          %h6.white-text.text-darken-4 Copyright © 2015 Femina Speaks Media, All rights reserved.
+          %p.white-text.text-darken-4 No part of this website may be reproduced or transmitted in any form, by any means.  It is illegal to use without express permission.
+          %p.white-text A violation of this will attract a N1,000,000 (one millions naira) fine and possible law suit.
+          %p.white-text Please read the full Copyright terms under #{ link_to 'TERMS OF USE.', about_terms_path }

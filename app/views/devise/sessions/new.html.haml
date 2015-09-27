@@ -1,6 +1,6 @@
 .container.center-align
   %h2 Log In
-  = render "devise/shared/facebook"
+  -#= render "devise/shared/facebook"
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .row
       .input-field.col.s12

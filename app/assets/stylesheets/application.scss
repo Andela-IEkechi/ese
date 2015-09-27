@@ -18,13 +18,13 @@
 @import url("http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext");
 
 nav {
-  border-bottom: 2px solid #37474f;
+  border-bottom: 2px solid #ff4081;
   ul a {
-    color: #37474f!important;
+    color: #ff4081!important;
   }
 }
 .brand-logo {
-  color: #37474f!important;
+  color: #ff4081!important;
 }
 
 select {
@@ -34,7 +34,7 @@ select {
 body {
   font-family: "Lato", "Roboto";
   font-style: italic;
-  background-color: #f5f5f5 ;
+  background-color: #fce4ec;
 }
 .parallax img {
   display: block;
@@ -54,16 +54,6 @@ body {
   background-repeat: no-repeat;
   overflow-y: scroll;
   height: 120vh;
-}
-.a-circle {
-  width:75px;
-  height:75px;
-  border-radius:50%;
-  font-size:15px;
-  color:#fff;
-  line-height:35px;
-  text-align:center;
-  background:#000
 }
 .wrap-nav {
   padding-left: 3em;

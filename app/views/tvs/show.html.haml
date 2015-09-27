@@ -16,6 +16,6 @@
       = @tv.published
     - if can? :manage, :all
       = link_to ('<i class="material-icons">edit</i> Edit Video').html_safe, edit_tv_path(@tv), 'data-tooltip' => 'Edit Video',
-        class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
+        class: 'btn-floating btn-large tooltipped waves-effect waves-light pink darken-3', 'data-delay' => '50', 'data-position' => 'top'
 
-    = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, tvs_path, class: 'waves-effect waves-light blue-grey darken-1 btn'
+    = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, tvs_path, class: 'waves-effect waves-light pink darken-3 btn'

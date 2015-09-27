@@ -2,19 +2,17 @@
   %thead
     %tr
       %th
-        %h5.blue-text.text-darken-4 Femina Speaks Newsletter for Week Ended #{@date}
+        %h5.pink-text.text-darken-4 Femina Speaks Newsletter for Week Ended #{@date}
   %tbody
     %tr
       %td
-        %h5.blue-text.text-darken-4= @newsletter.title
+        %h5.pink-text.text-darken-4= @newsletter.title
     %tr
       %td= raw(@newsletter.content)
     %tr
-      %td Not to play favorites, but this is perhaps the newsletter I most look forward to for a couple of reasons. First, I love the simplicity. It's not flashy, nor is it overly promotional. That's the hallmark of a successful email newsletter: most effective newsletters aim to educate, not sell. I also love the overall informal tone of this newsletter as it makes it feel as though you're hearing from a friend. If you're looking to lower the barrier between your company and your audience, consider using language that is friendly and inviting, not buttoned-up and jargony.
-    %tr
       %td
-        %h4.blue-text.text-darken-4 Posts for the week
+        %h4.pink-text.text-darken-4 Posts for the week
     %tr
       - @articles.each do |article|
         %tr
-          %td= link_to article.title, @url + "#{article.id}", target: '_blank'
+          %td= link_to article.title, @url + "#{article.id}", target: '_blank', class: 'waves-effect waves-light pink darken-3 btn-large'

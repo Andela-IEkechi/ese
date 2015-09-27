@@ -2,7 +2,7 @@
   %p#notice= notice
   .parallax
     = parallax_pic(@article)
-.section.grey.lighten-4
+.section.pink.lighten-5
   .row.container
     %h2.header= @article.title
     %blockquote
@@ -12,10 +12,10 @@
       = raw(@article.content)
     - if can? :manage, :all
       .row.container
-        = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, articles_path, class: 'waves-effect waves-light blue-grey darken-1 btn'
+        = link_to ('<i class="material-icons left">call_received</i> Back').html_safe, articles_path, class: 'waves-effect waves-light pink darken-3 btn'
 
         = link_to ('<i class="material-icons">edit</i> Edit Article').html_safe, edit_article_path(@article), 'data-tooltip' => 'Edit Article',
-            class: 'btn-floating btn-large tooltipped waves-effect waves-light blue-grey darken-1', 'data-delay' => '50', 'data-position' => 'top'
+            class: 'btn-floating btn-large tooltipped waves-effect waves-light pink darken-3', 'data-delay' => '50', 'data-position' => 'top'
 
         = link_to ('<i class="material-icons">delete</i> Delete Article').html_safe, @article, :method => :delete, :data => { :confirm => 'Are you sure?' } , 'data-tooltip' => 'Delete Article',
             class: 'btn-floating btn-large tooltipped waves-effect waves-light red darken-1', 'data-delay' => '50', 'data-position' => 'top'
