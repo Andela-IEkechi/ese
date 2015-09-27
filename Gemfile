@@ -29,7 +29,7 @@ gem 'omniauth-openid'
 gem 'haml'
 gem "haml-rails", "~> 0.9"
 gem 'bootstrap-sass', '~> 3.3.4'
-gem 'materialize-sass', '0.97.1'
+gem 'materialize-sass', '0.95.3.3'
 gem 'font-awesome-rails'
 # Rating
 gem 'ratyrate'
