@@ -1,7 +1,7 @@
 .parallax-container
   %p#notice= notice
   .parallax
-    = image_tag('nice1.jpg')
+    = parallax_pic(@article)
 .section.grey.lighten-4
   .row.container
     %h2.header= @article.title

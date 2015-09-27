@@ -1,7 +1,7 @@
 class NewsletterMailer < ApplicationMailer
   def newsletter_created(newsletter)
     @newsletter = newsletter
-    @articles = Article.this_week
+    @articles = Article.this_week.order(created_at: :desc)
     @users = User.all
     @date = Date.today.strftime("%b %d, %Y")
     @url  = "https://esewalter.com/articles/"
