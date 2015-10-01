@@ -23,8 +23,8 @@
           %ul#nav-mobile.right.hide-on-med-and-down
             %li= link_to 'Femina Speaks TV', tvs_path
             %li= link_to 'Read', articles_path
-            %li= link_to 'Book', books_path
-            %li= link_to 'Support Group', subscriptions_path
+            -#%li= link_to 'Book', books_path
+            -#%li= link_to 'Support Group', subscriptions_path
             %li= link_to 'About', about_show_path
             - if user_signed_in?
               - if current_user.image.present?
@@ -43,7 +43,7 @@
           .col.s4
             %li= link_to ('<i class="material-icons left">playlist_add</i> Tickets').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, books_path, class: 'waves-effect waves-light pink darken-4 btn-large'
+            %li= link_to ('<i class="material-icons left">assignment</i> Book').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
           .col.s4
             %li= link_to ('<i class="material-icons right">send</i> Donate').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
       .footer-copyright
