@@ -5,7 +5,7 @@
     %title Ese Walter
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = favicon_link_tag 'favicon.png'
+    = favicon_link_tag 'favicon.ico'
     %link{href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet'}
     = csrf_meta_tags
   %body
@@ -18,7 +18,7 @@
     .navbar-fixed
       %nav.blue.lighten-4
         .nav-wrapper.wrap-nav
-          -#= image_tag('femina-speaks.png', size: '63x63', class: 'responsive-img')
+          = image_tag('logo.png', size: '90x90', class: 'responsive-img')
           = link_to 'Femina Speaks', root_path, class: "brand-logo"
           %ul#nav-mobile.right.hide-on-med-and-down
             %li= link_to 'Femina Speaks TV', tvs_path
