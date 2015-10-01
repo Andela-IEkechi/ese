@@ -44,6 +44,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "fog"
+gem "therubyracer"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
