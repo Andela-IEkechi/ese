@@ -17,6 +17,14 @@
 @import "materialize";
 @import url("http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext");
 
+#slide-out li {
+  padding: 2em;
+}
+//#slide-out li:hover {
+//  background-color: #880e4f;
+//  color: #ffffff!important;
+//}
+
 nav {
   border-bottom: 2px solid #ff4081;
   ul a {
@@ -59,3 +67,4 @@ body {
   padding-left: 3em;
   padding-right: 1em;
 }
+
