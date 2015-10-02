@@ -7,12 +7,11 @@
       - if @user.image.present?
         .col.s9= image_tag @user.image.url(:small), class: 'circle responsive-img'
       - else
-        .col.s9= image_tag('default_avatar.png', width: "200", class: "circle responsive-img")
-      .col.s3.file-field.input-field
-        .btn
-          %span
-            %i.mdi-image-camera-alt
-        = f.file_field :image, class: 'tooltipped', 'data-tooltip' => 'Add Your Image', 'data-delay' => '50', 'data-position' => 'top'
+        .col.s4= image_tag('default_avatar.png', width: "200", class: "circle responsive-img")
+      .col.s3
+        .input-field
+          .btn
+            = f.file_field :image, class: 'tooltipped', 'data-tooltip' => 'Add Your Image', 'data-delay' => '50', 'data-position' => 'top'
     .row
       .input-field.col.s12
         %i.mdi-social-person.prefix
