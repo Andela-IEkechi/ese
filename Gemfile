@@ -33,6 +33,7 @@ gem 'materialize-sass', '0.95.3.3'
 gem 'font-awesome-rails'
 # Rating
 gem 'ratyrate'
+gem 'social-share-button'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use cancan for authorization

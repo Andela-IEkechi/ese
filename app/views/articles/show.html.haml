@@ -19,7 +19,7 @@
 
         = link_to ('<i class="material-icons">delete</i> Delete Article').html_safe, @article, :method => :delete, :data => { :confirm => 'Are you sure?' } , 'data-tooltip' => 'Delete Article',
             class: 'btn-floating btn-large tooltipped waves-effect waves-light red darken-1', 'data-delay' => '50', 'data-position' => 'top'
-
+    = social_share_button_tag(@article.title, popup: 'true', url: "http://esewalter.com/articles/#{@article.id}", 'data-twitter-title' => "#{@article.title}")
   .row
     %h2.center-align Comments
     .row

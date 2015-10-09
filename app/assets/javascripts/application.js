@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require materialize-sprockets
 //= require ckeditor/init
+//= require social-share-button
 //= require_tree .
 $( document ).ready(function() {
 	$('.datepicker').pickadate({
