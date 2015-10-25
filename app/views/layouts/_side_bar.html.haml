@@ -1,14 +1,21 @@
-%ul#slide-out.side-nav
-  %li= link_to 'Femina Speaks TV', tvs_path, class: 'waves-effect waves-light pink-text text-darken-4'
-  %li= link_to 'Read', articles_path, class: 'waves-effect waves-light pink-text text-darken-4'
+%ul#slide-out.side-nav.blue.lighten-4
+  %li
+    %h3= link_to 'Femina Speaks TV', tvs_path, class: 'waves-effect waves-light pink-text text-darken-4'
+  %li
+    %h3= link_to 'Read', articles_path, class: 'waves-effect waves-light pink-text text-darken-4'
   -#%li= link_to 'Book', books_path
   -#%li= link_to 'Support Group', subscriptions_path
-  %li= link_to 'About', about_show_path, class: 'waves-effect waves-light pink-text text-darken-4'
+  %li
+    %h3= link_to 'About', about_show_path, class: 'waves-effect waves-light pink-text text-darken-4'
   - if user_signed_in?
     - if current_user.image.present?
-      %li= image_tag(current_user.image, class: 'circle responsive-img', size: '58x40')
+      %li
+        %h3= image_tag(current_user.image, class: 'circle responsive-img', size: '58x40')
     - else
-      %li= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
-    %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button waves-effect waves-light pink-text text-darken-4', 'data-activates' => 'dropdown1'
+      %li
+        %h3= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
+    %li
+      %h3= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button waves-effect waves-light pink-text text-darken-4', 'data-activates' => 'dropdown1'
   - else
-    %li= link_to "Join", new_user_session_path, class: 'navbar-link waves-effect waves-light pink-text text-darken-4'
+    %li
+      %h3= link_to "Join", new_user_session_path, class: 'navbar-link waves-effect waves-light pink-text text-darken-4'
