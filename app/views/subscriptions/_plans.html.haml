@@ -1,41 +1,43 @@
-.center-align
-  %h1 Subscription Plans
-
-  .row
-    - @categories.each do |category|
-      .col.s6
-        .card.hoverable
-          .card-content
-            %table.centered.striped
-              %thead
-                %tr
-                  %th
-                    %h3.pink-text.text-darken-4= category
-                  %th
-                    %h5.green-text.text-darken-4= "#{sub_fee_selector(category)} Naira"
-              %tbody
-                %tr
-                  %td Psychotherapy
-                  %td.green-text <i class="material-icons right">done</i>
-                %tr
-                  %td Survivors Guide
-                  %td.green-text <i class="material-icons right">done</i>
-                %tr
-                  %td One on One Counseling
-                  %td.green-text <i class="material-icons right">done</i>
-                %tr
-                  %td Abusers Anonymous
-                  %td.green-text <i class="material-icons right">done</i>
-                %tr
-                  %td Private Facebook Group
-                  %td.green-text <i class="material-icons right">done</i>
-
-            = form_for Subscription.new do
-              .input-field
-                = hidden_field(:subscription, :sub_category, value: category)
-                = hidden_field(:subscription, :sub_fee, value: sub_fee_selector(category))
-          .card-action
-            .actions
-              = button_tag type: "submit", class: "waves-effect waves-light btn-large" do
-                %i.material-icons.right done_all
-                Subscribe
+.row.center-align
+  %h2 Watch this Space. Opening March 29TH 2016.
+-#.center-align
+-#  %h1 Subscription Plans
+-#
+-#  .row
+-#    - @categories.each do |category|
+-#      .col.s6
+-#        .card.hoverable
+-#          .card-content
+-#            %table.centered.striped
+-#              %thead
+-#                %tr
+-#                  %th
+-#                    %h3.pink-text.text-darken-4= category
+-#                  %th
+-#                    %h5.green-text.text-darken-4= "#{sub_fee_selector(category)} Naira"
+-#              %tbody
+-#                %tr
+-#                  %td Psychotherapy
+-#                  %td.green-text <i class="material-icons right">done</i>
+-#                %tr
+-#                  %td Survivors Guide
+-#                  %td.green-text <i class="material-icons right">done</i>
+-#                %tr
+-#                  %td One on One Counseling
+-#                  %td.green-text <i class="material-icons right">done</i>
+-#                %tr
+-#                  %td Abusers Anonymous
+-#                  %td.green-text <i class="material-icons right">done</i>
+-#                %tr
+-#                  %td Private Facebook Group
+-#                  %td.green-text <i class="material-icons right">done</i>
+-#
+-#            = form_for Subscription.new do
+-#              .input-field
+-#                = hidden_field(:subscription, :sub_category, value: category)
+-#                = hidden_field(:subscription, :sub_fee, value: sub_fee_selector(category))
+-#          .card-action
+-#            .actions
+-#              = button_tag type: "submit", class: "waves-effect waves-light btn-large" do
+-#                %i.material-icons.right done_all
+-#                Subscribe
