@@ -34,12 +34,7 @@
                   %li= image_tag(current_user.image, class: 'circle responsive-img', size: '58x40')
                 - else
                   %li= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
-                %li #{current_user.name}
-                - if can? :manage, :all
-                  %li= link_to 'Newsletters', newsletters_path
-                %li= link_to 'Edit profile', edit_user_registration_path
-                %li= link_to "Logout", destroy_user_session_path, method: :delete
-                -#%li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
+                %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
               - else
                 %li= link_to "Join", new_user_session_path, class: 'navbar-link'
             = link_to ("<i class='mdi-navigation-menu'></i>").html_safe, "#", class: 'button-collapse', 'data-activates'=>"slide-out"

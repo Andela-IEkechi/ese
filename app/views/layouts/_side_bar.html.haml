@@ -19,8 +19,6 @@
       %li= link_to 'Newsletters', newsletters_path
     %li= link_to 'Edit profile', edit_user_registration_path
     %li= link_to "Logout", destroy_user_session_path, method: :delete
-    -#%li
-    -#  %h3= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button waves-effect waves-light pink-text text-darken-4', 'data-activates' => 'dropdown1'
   - else
     %li
       %h3= link_to "Join", new_user_session_path, class: 'navbar-link waves-effect waves-light pink-text text-darken-4'
