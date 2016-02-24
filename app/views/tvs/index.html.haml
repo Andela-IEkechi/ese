@@ -2,16 +2,12 @@
   .container
     .row
       .col.s12
-        %ul.tabs
-          %li.tab.col.s4.active
-            = link_to(('<i class="mdi-social-person"></i> FSTV').html_safe, "#fstv")
-          %li.tab.col.s4
+        %ul.tabs.paint
+          %li.tab.col.s6.active
             = link_to(('<i class="mdi-social-person"></i> MTGT').html_safe, "#mtgt")
-          %li.tab.col.s4
+          %li.tab.col.s6
             = link_to(('<i class="mdi-social-person"></i> DOALN').html_safe, "#doaln")
 
-      #fstv.col.s12
-        = render 'fstv'
       #mtgt.col.s12
         = render 'mtgt'
       #doaln.col.s12

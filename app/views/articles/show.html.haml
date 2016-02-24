@@ -2,7 +2,7 @@
   %p#notice= notice
   .parallax
     = parallax_pic(@article)
-.section.pink.lighten-5
+.section
   .row.container
     %h2.header= @article.title
     %blockquote
@@ -61,7 +61,7 @@
                   = f.text_area :content, class: "materialize-textarea", id: 'textarea1'
                 %br/
                 .actions
-                  = button_tag type: "submit", class: "waves-effect waves-light btn" do
+                  = button_tag type: "submit", class: "waves-effect waves-light btn paint" do
                     %i.material-icons.left message
                     Post Comment
             %br/

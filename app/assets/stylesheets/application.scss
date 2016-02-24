@@ -27,13 +27,13 @@
 }
 
 nav {
-  border-bottom: 2px solid #ff4081;
+  background-color: #4D648D!important;
   ul a {
-    color: #ff4081!important;
+    color: white!important;
   }
 }
 .brand-logo {
-  color: #ff4081!important;
+  color: white!important;
 }
 
 select {
@@ -43,7 +43,8 @@ select {
 body {
   font-family: "Lato", "Roboto";
   font-style: italic;
-  background-color: #fce4ec;
+  background-color: #D0E1F9;
+  color: #1E1F26!important;
 }
 .parallax img {
   display: block;
@@ -64,8 +65,24 @@ body {
   overflow-y: scroll;
   height: 120vh;
 }
-.wrap-nav {
-  padding-left: 3em;
-  padding-right: 1em;
+
+.footer1 {
+  background-color: #32384D;
+}
+
+.lower-footer {
+  background-color: #4D648D!important;
+}
+.card-reveal {
+  background-color: #283655!important;
+}
+.paint {
+  background-color: #283655!important;
+}
+.paint2 {
+  background-color: #4D648D!important;
+}
+.paint-tab {
+  color: #4D648D!important;
 }
 

@@ -2,7 +2,7 @@
   %h1 Ese's Blog
   .row
     .col.s12
-      %ul.tabs
+      %ul.tabs.paint
         %li.tab.col.s3.active
           = link_to(('<i class="mdi-social-person"></i> Monday Mummies').html_safe, "#mms")
         %li.tab.col.s3
@@ -24,4 +24,4 @@
   - if can? :manage, :all
     .row
       = link_to ('<i class="material-icons">add</i> Create New Article').html_safe, new_article_path, 'data-tooltip' => 'Create New Article',
-      class: 'btn-floating btn-large tooltipped waves-effect waves-light pink darken-3', 'data-delay' => '50', 'data-position' => 'top'
+      class: 'btn-floating btn-large tooltipped waves-effect waves-light paint', 'data-delay' => '50', 'data-position' => 'top'

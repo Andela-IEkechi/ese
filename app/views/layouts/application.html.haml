@@ -5,7 +5,7 @@
     %title Ese Walter
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = favicon_link_tag 'favicon.ico'
+    = favicon_link_tag 'favicon.png'
     %link{href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet'}
     = csrf_meta_tags
   %body
@@ -16,39 +16,42 @@
       %li.divider
       %li= link_to "Logout", destroy_user_session_path, method: :delete
     .navbar-fixed
-      %nav.blue.lighten-4
+      %nav
         .nav-wrapper.wrap-nav
-          = image_tag('logo.png', size: '90x90', class: 'responsive-img')
-          = link_to 'Femina Speaks', root_path, class: "brand-logo"
-          %ul#nav-mobile.right.hide-on-med-and-down
-            %li= link_to 'Femina Speaks Media', tvs_path
-            %li= link_to 'Read', articles_path
-            %li= link_to 'Book', books_path
-            %li= link_to 'Support Group', subscriptions_path
-            %li= link_to 'About', about_show_path
-            - if user_signed_in?
-              - if current_user.image.present?
-                %li= image_tag(current_user.image, class: 'circle responsive-img', size: '58x40')
+          .container
+            -#= link_to(image_tag('femina.png', size: '200x200', class: 'responsive-img'), root_path, class: "brand-logo")
+            = image_tag('logo.png', size: '90x90', class: 'responsive-img')
+            = link_to 'Femina Speaks', root_path, class: "brand-logo"
+            %ul#nav-mobile.right.hide-on-med-and-down
+              %li= link_to 'About', about_show_path
+              %li= link_to 'Watch', tvs_path
+              %li= link_to 'Listen', "#"
+              %li= link_to 'Read', articles_path
+              %li= link_to 'Book', books_path
+              -#%li= link_to 'Support Group', subscriptions_path
+              - if user_signed_in?
+                - if current_user.image.present?
+                  %li= image_tag(current_user.image, class: 'circle responsive-img', size: '58x40')
+                - else
+                  %li= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
+                %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
               - else
-                %li= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
-              %li= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button', 'data-activates' => 'dropdown1'
-            - else
-              %li= link_to "Join", new_user_session_path, class: 'navbar-link'
-          = link_to ("<i class='mdi-navigation-menu'></i>").html_safe, "#", class: 'button-collapse', 'data-activates'=>"slide-out"
+                %li= link_to "Join", new_user_session_path, class: 'navbar-link'
+            = link_to ("<i class='mdi-navigation-menu'></i>").html_safe, "#", class: 'button-collapse', 'data-activates'=>"slide-out"
 
     = render 'layouts/side_bar'
     = render 'layouts/google_tag_manager'
     = render 'layouts/disclaimer'
     = yield
-    .col.s12.footer1.pink.darken-3.page-footer.center-align
+    .col.s12.footer1.page-footer.center-align
       .container
         .row.pad
           .col.s4
-            %li= link_to ('<i class="material-icons left">playlist_add</i> Live').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
+            %li= link_to ('<i class="material-icons left">playlist_add</i> Live').html_safe, '#', class: 'waves-effect waves-light paint2 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons left">assignment</i> Love').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
+            %li= link_to ('<i class="material-icons left">assignment</i> Love').html_safe, '#', class: 'waves-effect waves-light paint2 btn-large'
           .col.s4
-            %li= link_to ('<i class="material-icons right">send</i> Laugh').html_safe, '#', class: 'waves-effect waves-light pink darken-4 btn-large'
+            %li= link_to ('<i class="material-icons right">send</i> Laugh').html_safe, '#', class: 'waves-effect waves-light paint2 btn-large'
       .footer-copyright
         .container
           = link_to image_tag("facebook.png", size: '100x100'), 'https://www.facebook.com/esefemina'
