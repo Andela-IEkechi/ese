@@ -3,7 +3,7 @@
     %h3= link_to 'Femina Speaks TV', tvs_path, class: 'waves-effect waves-light pink-text text-darken-4'
   %li
     %h3= link_to 'Read', articles_path, class: 'waves-effect waves-light pink-text text-darken-4'
-  -#%li= link_to 'Book', books_path
+  %li= link_to 'Book', books_path
   -#%li= link_to 'Support Group', subscriptions_path
   %li
     %h3= link_to 'About', about_show_path, class: 'waves-effect waves-light pink-text text-darken-4'
@@ -14,8 +14,13 @@
     - else
       %li
         %h3= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
-    %li
-      %h3= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button waves-effect waves-light pink-text text-darken-4', 'data-activates' => 'dropdown1'
+    %li #{current_user.name}
+    - if can? :manage, :all
+      %li= link_to 'Newsletters', newsletters_path
+    %li= link_to 'Edit profile', edit_user_registration_path
+    %li= link_to "Logout", destroy_user_session_path, method: :delete
+    -#%li
+    -#  %h3= link_to ("<i class='material-icons right'>arrow_drop_down</i> #{current_user.name}").html_safe, '#', class: 'dropdown-button waves-effect waves-light pink-text text-darken-4', 'data-activates' => 'dropdown1'
   - else
     %li
       %h3= link_to "Join", new_user_session_path, class: 'navbar-link waves-effect waves-light pink-text text-darken-4'

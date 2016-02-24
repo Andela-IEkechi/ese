@@ -29,7 +29,15 @@ $( document ).ready(function() {
 		$('#disclaimer').openModal();
 		localStorage.setItem('popState','shown')
 	}
-	$('.dropdown-button').dropdown();
+    $('.dropdown-button').dropdown({
+            inDuration: 300,
+            outDuration: 225,
+            constrain_width: true,
+            hover: true,
+            gutter: 0,
+            belowOrigin: false
+        }
+    );
 	// Show sideNav
 //	$('.button-collapse').sideNav('show');
 //// Hide sideNav
