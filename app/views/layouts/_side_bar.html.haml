@@ -1,12 +1,14 @@
-%ul#slide-out.side-nav.blue.lighten-4
+%ul#slide-out.side-nav.paint.lighten-4
   %li
-    %h3= link_to 'Femina Speaks TV', tvs_path, class: 'waves-effect waves-light pink-text text-darken-4'
+    %h3= link_to 'Watch', tvs_path, class: 'waves-effect waves-light white-text text-darken-4'
   %li
-    %h3= link_to 'Read', articles_path, class: 'waves-effect waves-light pink-text text-darken-4'
-  %li= link_to 'Book', books_path
+    %h3= link_to 'Listen', "#", class: 'waves-effect waves-light white-text text-darken-4'
+  %li
+    %h3= link_to 'Read', articles_path, class: 'waves-effect waves-light white-text text-darken-4'
+  %li= link_to 'Book', books_path, class: 'waves-effect waves-light white-text text-darken-4'
   -#%li= link_to 'Support Group', subscriptions_path
   %li
-    %h3= link_to 'About', about_show_path, class: 'waves-effect waves-light pink-text text-darken-4'
+    %h3= link_to 'About', about_show_path, class: 'waves-effect waves-light white-text text-darken-4'
   - if user_signed_in?
     - if current_user.image.present?
       %li
@@ -14,11 +16,11 @@
     - else
       %li
         %h3= image_tag('default_avatar.png', class: 'circle responsive-img', size: '58x40')
-    %li #{current_user.name}
+    %li.white-text #{current_user.name}
     - if can? :manage, :all
-      %li= link_to 'Newsletters', newsletters_path
-    %li= link_to 'Edit profile', edit_user_registration_path
-    %li= link_to "Logout", destroy_user_session_path, method: :delete
+      %li.white-text= link_to 'Newsletters', newsletters_path, class: 'waves-effect waves-light white-text text-darken-4'
+    %li.white-text= link_to 'Edit profile', edit_user_registration_path, class: 'waves-effect waves-light white-text text-darken-4'
+    %li.white-text= link_to "Logout", destroy_user_session_path, method: :delete, class: 'waves-effect waves-light white-text text-darken-4'
   - else
     %li
-      %h3= link_to "Join", new_user_session_path, class: 'navbar-link waves-effect waves-light pink-text text-darken-4'
+      %h3= link_to "Join", new_user_session_path, class: 'navbar-link waves-effect waves-light white-text text-darken-4'

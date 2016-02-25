@@ -9,7 +9,7 @@
     %link{href: 'https://fonts.googleapis.com/icon?family=Material+Icons', rel: 'stylesheet'}
     = csrf_meta_tags
   %body
-    %ul#dropdown1.dropdown-content
+    %ul#dropdown1.dropdown-content.paint
       - if can? :manage, :all
         %li= link_to 'Newsletters', newsletters_path
       %li= link_to 'Edit profile', edit_user_registration_path
